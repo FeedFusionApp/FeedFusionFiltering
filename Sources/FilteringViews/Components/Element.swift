@@ -43,15 +43,21 @@ extension FilteringView {
                 }
             }
             .padding(10)
-            .background(Background())
+            .background(backgroundMaterial)
         }
         #else
         var body: some View {
             wideLayout()
             .padding(10)
-            .background(Background())
+            .background(backgroundMaterial)
         }
         #endif
+        
+        var backgroundMaterial: some View {
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .foregroundColor(config.primaryBackground)
+                .frame(maxWidth: .infinity)
+        }
         
         func iconAndName() -> some View {
             HStack(alignment: .firstTextBaseline) {

@@ -17,11 +17,19 @@ public struct TestFeed: FilteringFeed {
 }
 
 public struct FilteringViewConfig<Feed: FilteringFeed> {
-    public static var `default`: FilteringViewConfig<TestFeed>  {.init(primaryBackground: .white,
-                                                             secondaryBackground: .secondary,
-                                                             primaryText: .black,
-                                                             secondaryText: .gray,
-                                                             feedStorage: .init(.init([])))}
+    public static var `default`: FilteringViewConfig<TestFeed>  {
+        .init(
+            primaryBackground: .white,
+            secondaryBackground: .init(red: 0.929,
+                                       green: 0.922,
+                                       blue: 0.918),
+            primaryText: .black,
+            secondaryText: .init(red: 0.557,
+                                 green: 0.553,
+                                 blue: 0.549),
+            feedStorage: .init(.init([]))
+        )
+    }
     var primaryBackground: Color
     var secondaryBackground: Color
     var primaryText: Color

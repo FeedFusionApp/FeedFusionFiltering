@@ -41,7 +41,10 @@ extension FilteringView {
                 VStack(spacing: 5) {
                     ForEach(filter.children) { child in
                         HStack(alignment: .top, spacing: 0) {
-                            Button(role: .destructive, action: { filter.children.removeAll(where: { $0.id == child.id }); filter.objectWillChange.send() }) {
+                            Button(role: .destructive, action: {
+                                filter.children.removeAll(where: { $0.id == child.id });
+                                filter.objectWillChange.send()
+                            }) {
                                 Image(systemName: "multiply.circle.fill")
                                     .symbolRenderingMode(.hierarchical)
                                     .imageScale(.large)

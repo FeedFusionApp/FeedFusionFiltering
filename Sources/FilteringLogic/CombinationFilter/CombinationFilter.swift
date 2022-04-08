@@ -8,7 +8,7 @@
 import Foundation
 
 public class CombinationFilter: Filter, ObservableObject {
-    public var id: UUID { UUID() }
+    public let id: UUID = UUID()
     public var description: String { "CombinationFilter(type: \(type), children: [\(children.map(\.description).joined(separator: ", "))])"}
     public var filterType: FilterType { .combination }
     

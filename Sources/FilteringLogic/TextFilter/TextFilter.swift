@@ -8,7 +8,7 @@
 import Foundation
 
 public class TextFilter: Filter, ObservableObject {
-    public var id: UUID { UUID() }
+    public let id: UUID = UUID()
     public var description: String { "FeedFilter(type: \(type), key: \(key), term: '\(term)'"}
     public var filterType: FilterType { .text }
     

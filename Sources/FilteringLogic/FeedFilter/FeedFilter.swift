@@ -8,7 +8,7 @@
 import Foundation
 
 public class FeedFilter: Filter, ObservableObject {
-    public var id: UUID { UUID() }
+    public let id: UUID = UUID()
     public var description: String { "FeedFilter(type: \(type), feedID: \(feedID?.uuidString ?? "_")"}
     public var filterType: FilterType { .feed }
     
